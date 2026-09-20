@@ -1,0 +1,41 @@
+[
+  {
+    "question": "Người mua có bao nhiêu ngày gửi yêu cầu Trả hàng/Hoàn tiền cho đơn thường?",
+    "gold_answer": "15 ngày kể từ trạng thái ‘Giao hàng thành công’.",
+    "expected_doc_id": "shopee-quy-dinh-chung-tra-hang-hoan-tien",
+    "evidence": "Đối với các đơn hàng khác: 15 ngày kể từ lúc đơn hàng được cập nhật trạng thái ‘Giao hàng thành công’.",
+    "metadata_filter": null
+  },
+  {
+    "question": "Đơn thực phẩm tươi sống/đông lạnh thời hạn bao lâu?",
+    "gold_answer": "Trong vòng 24 giờ.",
+    "expected_doc_id": "shopee-quy-dinh-chung-tra-hang-hoan-tien",
+    "evidence": "Đối với đơn hàng giao thực phẩm tươi sống & đông lạnh (trừ lý do Chưa nhận được hàng): Trong vòng 24 giờ kể từ lúc đơn hàng được cập nhật trạng thái ‘Giao hàng thành công’.",
+    "metadata_filter": null
+  },
+  {
+    "question": "Chọn ‘Tự sắp xếp’ thì ai trả phí trước, bao lâu được hoàn?",
+    "gold_answer": "Người mua trả trước; hoàn trong 3–5 ngày làm việc.",
+    "expected_doc_id": "shopee-phuong-thuc-gui-hang-hoan-tra",
+    "evidence": "Nếu bạn trả hàng qua hình thức Tự sắp xếp, bạn cần thanh toán trước phí trả hàng. Shopee sẽ hỗ trợ bạn phí trả hàng trong vòng 3 - 5 ngày làm việc",
+    "metadata_filter": {
+      "audience": "buyer"
+    }
+  },
+  {
+    "question": "Shop chưa nhận được hàng hoàn thì sau bao lâu khiếu nại được?",
+    "gold_answer": "Sau 2 ngày kể từ khi hệ thống cập nhật Người mua đã gửi hàng.",
+    "expected_doc_id": "shopee-seller-quan-ly-don-tra-hang-hoan-tien",
+    "evidence": "Sau 2 ngày kể từ ngày hệ thống cập nhật Người mua đã gửi hàng cho ĐVVC",
+    "metadata_filter": {
+      "audience": "seller"
+    }
+  },
+  {
+    "question": "Người Bán tại Shopee Mall phải nhận lại hàng hoàn trong bao lâu?",
+    "gold_answer": "07 (bảy) ngày làm việc kể từ quyết định cuối cùng của Shopee.",
+    "expected_doc_id": "shopee-dieu-khoan-shopee-mall",
+    "evidence": "Người Bán tại Shopee Mall có nghĩa vụ nhận lại Sản Phẩm Hoàn Trả trong vòng 07 (bảy) ngày làm việc",
+    "metadata_filter": null
+  }
+]

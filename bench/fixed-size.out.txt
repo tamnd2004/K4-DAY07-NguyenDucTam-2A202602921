@@ -1,0 +1,139 @@
+Initializing embedding provider: openai...
+Corpus: data/ecommerce | Benchmark: data/ecommerce/benchmark.json | Embedding provider: openai
+Scoring has two retrieval levels: gold document rank and answer-evidence chunk rank. The 2/1/0 score uses the evidence rank.
+
+========================================================================================
+STRATEGY: fixed_size
+========================================================================================
+Prepared 210 chunks. Embedding them now...
+  Embedded batch 1/7 (32/210 new texts)
+  Embedded batch 2/7 (64/210 new texts)
+  Embedded batch 3/7 (96/210 new texts)
+  Embedded batch 4/7 (128/210 new texts)
+  Embedded batch 5/7 (160/210 new texts)
+  Embedded batch 6/7 (192/210 new texts)
+  Embedded batch 7/7 (210/210 new texts)
+Storing embedded chunks...
+  Stored 210/210 chunks
+Documents: 6 | Chunks: 210 | Top-k: 3
+  Embedded batch 1/1 (1/1 new texts)
+
+Q1: Người mua có bao nhiêu ngày gửi yêu cầu Trả hàng/Hoàn tiền cho đơn thường?
+Gold: 15 ngày kể từ trạng thái ‘Giao hàng thành công’.
+Expected doc: shopee-quy-dinh-chung-tra-hang-hoan-tien
+Filter: None
+TOP-K:
+  Gold document rank: 2
+  Evidence chunk rank: NOT FOUND
+  Rubric score: 0/2
+  1. [----] score=0.6124 doc=shopee-phuong-thuc-gui-hang-hoan-tra chunk=shopee-phuong-thuc-gui-hang-hoan-tra#0
+     # Các phương thức gửi hàng hoàn trả và phí hoàn trả [Trả hàng/ Hoàn tiền] Các phương thức gửi hàng hoàn trả và phí hoàn trả 1. Hướng dẫn trả hàng sau khi yêu cầu Trả hàng/Hoàn tiền
+  2. [----] score=0.5931 doc=shopee-quy-dinh-chung-tra-hang-hoan-tien chunk=shopee-quy-dinh-chung-tra-hang-hoan-tien#3
+     còn trong thời hạn 15 ngày Trả hàng/Hoàn tiền quy định của Shopee Yêu cầu Trả hàng/Hoàn tiền của bạn sẽ được phản hồi trong vòng 3-5 ngày làm việc*. Hãy theo dõi mục thông báo trên
+  3. [----] score=0.5830 doc=shopee-phuong-thuc-gui-hang-hoan-tra chunk=shopee-phuong-thuc-gui-hang-hoan-tra#7
+     Mã vận đơn, số điện thoại và đúng địa chỉ người nhận, không thu hộ (COD) 2. Chính sách hỗ trợ phí trả hàng: 2.1. Phí vận chuyển ban đầu khi yêu cầu Trả hàng/Hoàn tiền: Nếu bạn yêu 
+Agent answer correctness: MANUAL CHECK REQUIRED against the gold answer (this runner evaluates retrieval evidence, not text generation).
+  Embedded batch 1/1 (1/1 new texts)
+
+Q2: Đơn thực phẩm tươi sống/đông lạnh thời hạn bao lâu?
+Gold: Trong vòng 24 giờ.
+Expected doc: shopee-quy-dinh-chung-tra-hang-hoan-tien
+Filter: None
+TOP-K:
+  Gold document rank: 2
+  Evidence chunk rank: NOT FOUND
+  Rubric score: 0/2
+  1. [----] score=0.5448 doc=shopee-chinh-sach-van-chuyen chunk=shopee-chinh-sach-van-chuyen#9
+     hất khi vận chuyển. Shopee được miễn trừ mọi trách nhiệm, và sẽ không giải quyết bất kỳ khiếu nại, yêu cầu bồi thường nào phát sinh. iii. Xem chi tiết hướng dẫn đối với nhóm mặt hà
+  2. [----] score=0.3916 doc=shopee-quy-dinh-chung-tra-hang-hoan-tien chunk=shopee-quy-dinh-chung-tra-hang-hoan-tien#5
+     Tất cả sản phẩm Thiếu hàng Đã nhận được gói hàng nhưng thiếu một/vài sản phẩm đã đặt, thiếu bộ phận của sản phẩm hoặc phụ kiện, thiếu quà tặng kèm Tất cả sản phẩm Người bán gửi sai
+  3. [----] score=0.3882 doc=shopee-dieu-khoan-shopee-mall chunk=shopee-dieu-khoan-shopee-mall#4
+     g hóa đã mua tại Shopee Mall (“Sản Phẩm tại Shopee Mall”) bằng cách nhấn vào nút “Yêu Cầu Trả Hàng/Hoàn Tiền” trên Trang Shopee để yêu cầu trả hàng/hoàn tiền vào bất kỳ thời điểm n
+Agent answer correctness: MANUAL CHECK REQUIRED against the gold answer (this runner evaluates retrieval evidence, not text generation).
+  Embedded batch 1/1 (1/1 new texts)
+
+Q3: Chọn ‘Tự sắp xếp’ thì ai trả phí trước, bao lâu được hoàn?
+Gold: Người mua trả trước; hoàn trong 3–5 ngày làm việc.
+Expected doc: shopee-phuong-thuc-gui-hang-hoan-tra
+Filter: {'audience': 'buyer'}
+FILTERED TOP-K:
+  Gold document rank: 2
+  Evidence chunk rank: 3
+  Rubric score: 1/2
+  1. [----] score=0.5071 doc=shopee-quy-dinh-chung-tra-hang-hoan-tien chunk=shopee-quy-dinh-chung-tra-hang-hoan-tien#2
+     ái ‘Giao hàng thành công’. Đối với đơn hàng do Người bán tự vận chuyển: + 15 ngày kể từ lúc bạn bấm ‘Đã nhận được hàng’, hoặc + 20 ngày kể từ lúc đơn hàng được cập nhật trạng thái 
+  2. [----] score=0.5024 doc=shopee-phuong-thuc-gui-hang-hoan-tra chunk=shopee-phuong-thuc-gui-hang-hoan-tra#3
+     g gói đơn hàng hoàn trả và cách Tra cứu mã vận đơn trả hàng tại đây. 1.2. Lưu ý khi chọn Hình thức Đơn vị vận chuyển đến lấy hàng: Đơn vị vận chuyển sẽ chỉ hỗ trợ tối đa 3 lần lấy 
+  3. [MATCH] score=0.4981 doc=shopee-phuong-thuc-gui-hang-hoan-tra chunk=shopee-phuong-thuc-gui-hang-hoan-tra#8
+     yêu cầu Trả hàng/Hoàn tiền cho 1 trong 2 sản phẩm đã mua), phí vận chuyển sẽ không được hoàn lại cho bạn. 2.2. Phí vận chuyển trả hàng: Nếu bạn trả hàng qua hình thức Đơn vị vận 
+UNFILTERED TOP-K:
+  Gold document rank: 3
+  Evidence chunk rank: NOT FOUND
+  Rubric score: 0/2
+  1. [----] score=0.5583 doc=shopee-chinh-sach-tra-hang-hoan-tien chunk=shopee-chinh-sach-tra-hang-hoan-tien#31
+     n chuyển nào cho việc trả hàng. Theo hình thức “Tự sắp xếp”: Người Mua cần thanh toán trước chi phí vận chuyển cho việc trả hàng. Shopee sẽ hỗ trợ hoàn lại một phần chi phí vận chu
+  2. [----] score=0.5071 doc=shopee-quy-dinh-chung-tra-hang-hoan-tien chunk=shopee-quy-dinh-chung-tra-hang-hoan-tien#2
+     ái ‘Giao hàng thành công’. Đối với đơn hàng do Người bán tự vận chuyển: + 15 ngày kể từ lúc bạn bấm ‘Đã nhận được hàng’, hoặc + 20 ngày kể từ lúc đơn hàng được cập nhật trạng thái 
+  3. [----] score=0.5024 doc=shopee-phuong-thuc-gui-hang-hoan-tra chunk=shopee-phuong-thuc-gui-hang-hoan-tra#3
+     g gói đơn hàng hoàn trả và cách Tra cứu mã vận đơn trả hàng tại đây. 1.2. Lưu ý khi chọn Hình thức Đơn vị vận chuyển đến lấy hàng: Đơn vị vận chuyển sẽ chỉ hỗ trợ tối đa 3 lần lấy 
+A/B verdict: IMPROVED: filter moved answer evidence higher or into top-k
+Agent answer correctness: MANUAL CHECK REQUIRED against the gold answer (this runner evaluates retrieval evidence, not text generation).
+  Embedded batch 1/1 (1/1 new texts)
+
+Q4: Shop chưa nhận được hàng hoàn thì sau bao lâu khiếu nại được?
+Gold: Sau 2 ngày kể từ khi hệ thống cập nhật Người mua đã gửi hàng.
+Expected doc: shopee-seller-quan-ly-don-tra-hang-hoan-tien
+Filter: {'audience': 'seller'}
+FILTERED TOP-K:
+  Gold document rank: 1
+  Evidence chunk rank: 2
+  Rubric score: 1/2
+  1. [----] score=0.5972 doc=shopee-seller-quan-ly-don-tra-hang-hoan-tien chunk=shopee-seller-quan-ly-don-tra-hang-hoan-tien#4
+     án sẽ nhận được khoản đền bù từ Shopee. Nhấn Chi tiết giao dịch để đến trang Thêm giao dịch - Chọn đơn hàng cần xử lý - Nhấn Hoàn tất để hoàn thành quá trình thêm chi phí C. Hướng 
+  2. [MATCH] score=0.5969 doc=shopee-seller-quan-ly-don-tra-hang-hoan-tien chunk=shopee-seller-quan-ly-don-tra-hang-hoan-tien#5
+     g của Shop...) Từ ngày hệ thống cập nhật trả hàng thành công Trong vòng 2 ngày 2. Hệ thống ghi nhận Người Mua đã gửi hàng cho ĐVVC nhưng Shop chưa nhận được hàng Sau 2 ngày kể từ n
+  3. [----] score=0.5462 doc=shopee-seller-quan-ly-don-tra-hang-hoan-tien chunk=shopee-seller-quan-ly-don-tra-hang-hoan-tien#1
+     ng trên Kênh Quản Lý Shop Tổng quan quy trình xử lý đơn trả hàng: 1.Theo dõi trạng thái và xử lý đơn Trả hàng/ hoàn tiền trên Kênh Quản Lý Shop Trạng thái hàng hoàn gồm: Đã nhận hà
+UNFILTERED TOP-K:
+  Gold document rank: 3
+  Evidence chunk rank: NOT FOUND
+  Rubric score: 0/2
+  1. [----] score=0.6297 doc=shopee-chinh-sach-van-chuyen chunk=shopee-chinh-sach-van-chuyen#32
+     tốc là 21 ngày) mà Người Bán không liên hệ với Shopee để xử lý đơn hàng, Shopee miễn trừ trách nhiệm, và sẽ không giải quyết bất kỳ khiếu nại, yêu cầu bồi thường nào phát sinh sau 
+  2. [----] score=0.6035 doc=shopee-chinh-sach-van-chuyen chunk=shopee-chinh-sach-van-chuyen#30
+     thời hạn khiếu nại mà Shopee không nhận được bất kì khiếu nại, yêu cầu bồi thường nào từ Người Mua/Người Bán, Shopee được miễn trừ trách nhiệm, và sẽ không giải quyết bất kỳ khiếu 
+  3. [----] score=0.5972 doc=shopee-seller-quan-ly-don-tra-hang-hoan-tien chunk=shopee-seller-quan-ly-don-tra-hang-hoan-tien#4
+     án sẽ nhận được khoản đền bù từ Shopee. Nhấn Chi tiết giao dịch để đến trang Thêm giao dịch - Chọn đơn hàng cần xử lý - Nhấn Hoàn tất để hoàn thành quá trình thêm chi phí C. Hướng 
+A/B verdict: IMPROVED: filter moved answer evidence higher or into top-k
+Agent answer correctness: MANUAL CHECK REQUIRED against the gold answer (this runner evaluates retrieval evidence, not text generation).
+  Embedded batch 1/1 (1/1 new texts)
+
+Q5: Người Bán tại Shopee Mall phải nhận lại hàng hoàn trong bao lâu?
+Gold: 07 (bảy) ngày làm việc kể từ quyết định cuối cùng của Shopee.
+Expected doc: shopee-dieu-khoan-shopee-mall
+Filter: None
+TOP-K:
+  Gold document rank: 1
+  Evidence chunk rank: 2
+  Rubric score: 1/2
+  1. [----] score=0.7148 doc=shopee-dieu-khoan-shopee-mall chunk=shopee-dieu-khoan-shopee-mall#31
+     ười Bán tại Shopee Mall theo quy định tại Chính Sách Vận Chuyển. Người Bán tại Shopee Mall cần gửi email khiếu nại kèm theo các ảnh chụp/ video bằng chứng cụ thể cho Shopee về Sản 
+  2. [MATCH] score=0.7066 doc=shopee-dieu-khoan-shopee-mall chunk=shopee-dieu-khoan-shopee-mall#25
+     ý với yêu cầu của Người Mua, Shopee sẽ gửi trả lại Sản Phẩm cho Người Bán tại Shopee Mall trong vòng 07 (bảy) ngày làm việc kể từ ngày Shopee đưa ra quyết định cuối cùng liên quan 
+  3. [----] score=0.7028 doc=shopee-dieu-khoan-shopee-mall chunk=shopee-dieu-khoan-shopee-mall#23
+     p dụng cho Người Bán tại Shopee Mall a. Trong hầu hết các trường hợp, Shopee sẽ xử lý và đưa ra quyết định cuối cùng liên quan đến yêu cầu trả hàng hoàn tiền của Người Mua trong vò
+Agent answer correctness: MANUAL CHECK REQUIRED against the gold answer (this runner evaluates retrieval evidence, not text generation).
+
+SUMMARY fixed_size: chunks=210, DocHit@3=5/5, EvidenceHit@3=3/5, Score=3/10, MRR=0.267
+A/B FILTER SUMMARY:
+  - Q3: IMPROVED: filter moved answer evidence higher or into top-k
+  - Q4: IMPROVED: filter moved answer evidence higher or into top-k
+FAILURE CASE TO REPORT:
+  Question: Q1 - Người mua có bao nhiêu ngày gửi yêu cầu Trả hàng/Hoàn tiền cho đơn thường?
+  Score: 0/2
+  Why: The gold document reached top-k, but the returned section did not contain the answer evidence.
+  Proposed fix: Improve chunk boundaries/overlap or use heading-aware chunks so the answer section has more chances to rank.
+
+NOTE: A complete rubric judgment still requires comparing the generated agent answer with Gold. This runner intentionally does not claim answer correctness when no generation LLM is configured.
+
+Benchmark report: bench/fixed-size.out.txt

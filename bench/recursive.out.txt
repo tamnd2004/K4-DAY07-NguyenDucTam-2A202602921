@@ -1,0 +1,68 @@
+Corpus: data/ecommerce | Benchmark: data/ecommerce/benchmark.json | Embedding provider: openai
+
+========================================================================================
+STRATEGY: recursive
+========================================================================================
+Documents: 6 | Chunks: 268 | Top-k: 3
+
+Q1: Người mua có bao nhiêu ngày gửi yêu cầu Trả hàng/Hoàn tiền cho đơn thường?
+Gold: 15 ngày kể từ trạng thái ‘Giao hàng thành công’.
+Expected doc: shopee-quy-dinh-chung-tra-hang-hoan-tien
+Filter: None
+Relevant rank: NOT FOUND
+  1. [----] score=0.7041 doc=shopee-chinh-sach-tra-hang-hoan-tien
+     3.2. Người Mua có thể gửi yêu cầu trả hàng/hoàn tiền trong vòng 15 (mười lăm) ngày kể từ lúc đơn hàng được cập nhật giao hàng thành công. Riêng đối với các Sản Phẩm là thực phẩm tư
+  2. [----] score=0.6116 doc=shopee-phuong-thuc-gui-hang-hoan-tra
+     # Các phương thức gửi hàng hoàn trả và phí hoàn trả [Trả hàng/ Hoàn tiền] Các phương thức gửi hàng hoàn trả và phí hoàn trả 1. Hướng dẫn trả hàng sau khi yêu cầu Trả hàng/Hoàn tiền
+  3. [----] score=0.6051 doc=shopee-dieu-khoan-shopee-mall
+     1.2. Sau khi Người Mua yêu cầu trả hàng/hoàn tiền, trừ trường hợp được “Hoàn Tiền Ngay”, Người Mua tại Shopee Mall phải hoàn trả Sản Phẩm đến Trung Tâm Xử Lý Trả Hàng của Shopee ho
+
+Q2: Đơn thực phẩm tươi sống/đông lạnh thời hạn bao lâu?
+Gold: Trong vòng 24 giờ.
+Expected doc: shopee-quy-dinh-chung-tra-hang-hoan-tien
+Filter: None
+Relevant rank: 2
+  1. [----] score=0.6993 doc=shopee-chinh-sach-van-chuyen
+     b. Thực phẩm tươi sống hoặc hàng hóa còn hạn sử dụng dưới 30 ngày, hàng hóa cần bảo quản đặc biệt (lạnh, nóng, v.v...) i. Để đảm bảo duy trì chất lượng sản phẩm và tránh các trường
+  2. [MATCH] score=0.5063 doc=shopee-quy-dinh-chung-tra-hang-hoan-tien
+     Đối với đơn hàng giao thực phẩm tươi sống & đông lạnh (trừ lý do Chưa nhận được hàng): Trong vòng 24 giờ kể từ lúc đơn hàng được cập nhật trạng thái ‘Giao hàng thành công’. Đối với
+  3. [----] score=0.4720 doc=shopee-chinh-sach-tra-hang-hoan-tien
+     3.2. Người Mua có thể gửi yêu cầu trả hàng/hoàn tiền trong vòng 15 (mười lăm) ngày kể từ lúc đơn hàng được cập nhật giao hàng thành công. Riêng đối với các Sản Phẩm là thực phẩm tư
+
+Q3: Chọn ‘Tự sắp xếp’ thì ai trả phí trước, bao lâu được hoàn?
+Gold: Người mua trả trước; hoàn trong 3–5 ngày làm việc.
+Expected doc: shopee-phuong-thuc-gui-hang-hoan-tra
+Filter: {'audience': 'buyer'}
+Relevant rank: 1
+  1. [MATCH] score=0.5740 doc=shopee-phuong-thuc-gui-hang-hoan-tra
+     Nếu bạn trả hàng qua hình thức Tự sắp xếp, bạn cần thanh toán trước phí trả hàng. Shopee sẽ hỗ trợ bạn phí trả hàng trong vòng 3 - 5 ngày làm việc (không kể Thứ 7, Chủ nhật, Ngày l
+  2. [----] score=0.5301 doc=shopee-phuong-thuc-gui-hang-hoan-tra
+     Xem chi tiết Cách đóng gói đơn hàng hoàn trả và cách Tra cứu mã vận đơn trả hàng tại đây. 1.2. Lưu ý khi chọn Hình thức Đơn vị vận chuyển đến lấy hàng: Đơn vị vận chuyển sẽ chỉ hỗ 
+  3. [----] score=0.4995 doc=shopee-phuong-thuc-gui-hang-hoan-tra
+     1.4. Lưu ý khi chọn hình thức Tự sắp xếp: Bạn phải lưu lại hóa đơn trả hàng với đầy đủ thông tin: Mã vận đơn, số điện thoại và đúng địa chỉ người nhận, không thu hộ (COD) 2. Chính 
+
+Q4: Shop chưa nhận được hàng hoàn thì sau bao lâu khiếu nại được?
+Gold: Sau 2 ngày kể từ khi hệ thống cập nhật Người mua đã gửi hàng.
+Expected doc: shopee-seller-quan-ly-don-tra-hang-hoan-tien
+Filter: {'audience': 'seller'}
+Relevant rank: 1
+  1. [MATCH] score=0.6394 doc=shopee-seller-quan-ly-don-tra-hang-hoan-tien
+     1. Hệ thống ghi nhận đã trả hàng thành công nhưng Shop chưa nhận được hàng hoặc hàng hoàn về gặp vấn đề (vỡ/ hư hại/thiếu hàng/ không phải hàng của Shop...) Từ ngày hệ thống cập nh
+  2. [----] score=0.5419 doc=shopee-seller-quan-ly-don-tra-hang-hoan-tien
+     Để kiểm tra trạng thái đơn trả hàng, tại Kênh Quản lý Shop - Chọn Trả hàng/Hoàn tiền - Đến trang Trả hàng thành công 💡 Mẹo: Nhấn Xem chi tiết tại phần thông báo đầu trang để xem tr
+  3. [----] score=0.5402 doc=shopee-seller-quan-ly-don-tra-hang-hoan-tien
+     Tổng quan quy trình xử lý đơn trả hàng: 1.Theo dõi trạng thái và xử lý đơn Trả hàng/ hoàn tiền trên Kênh Quản Lý Shop Trạng thái hàng hoàn gồm: Đã nhận hàng: Là trạng thái ĐVVC đã 
+
+Q5: Người Bán tại Shopee Mall phải nhận lại hàng hoàn trong bao lâu?
+Gold: 07 (bảy) ngày làm việc kể từ quyết định cuối cùng của Shopee.
+Expected doc: shopee-dieu-khoan-shopee-mall
+Filter: None
+Relevant rank: 1
+  1. [MATCH] score=0.7721 doc=shopee-dieu-khoan-shopee-mall
+     Người Bán tại Shopee Mall có nghĩa vụ nhận lại Sản Phẩm Hoàn Trả trong vòng 07 (bảy) ngày làm việc kể từ khi nhận được quyết định cuối cùng của Shopee liên quan đến yêu cầu trả hàn
+  2. [----] score=0.6963 doc=shopee-dieu-khoan-shopee-mall
+     1.9.1. Người Bán tại Shopee Mall và Shopee cùng đồng ý rằng Người Mua tại Shopee Mall có quyền gửi khiếu nại hoặc yêu cầu trả hàng hoàn tiền trong vòng 24 (hai mươi bốn) giờ đồng h
+  3. [----] score=0.6940 doc=shopee-dieu-khoan-shopee-mall
+     a. Người Bán tại Shopee Mall sẽ chịu trách nhiệm chi trả chi phí vận chuyển chiều hoàn trả trong trường hợp đơn hàng không chuyển phát được trong quá trình vận chuyển hoặc có p
+
+SUMMARY recursive: chunks=268, Hit@3=4/5, MRR=0.700
